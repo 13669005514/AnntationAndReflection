@@ -40,7 +40,6 @@ public class Demo3 {
             name.set(u4,"测试5");
             System.out.println(u4.getName());
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }
