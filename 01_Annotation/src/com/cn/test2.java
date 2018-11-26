@@ -7,7 +7,7 @@ package com.cn;
  * @Date: 2018/11/23/ 11:40
  */
 
-@MyAnnotation
+@MyAnnotation("oooo")
 public class test2 {
 
     @MyAnnotation(value = "123")

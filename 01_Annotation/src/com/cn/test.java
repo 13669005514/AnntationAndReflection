@@ -4,7 +4,7 @@ package com.cn;
  * 内置的三大注解的使用
  * @author zhangfx 2018/11/23
  */
-@MyAnnotation
+@MyAnnotation("/xxx")
 public class test {
 
     /**

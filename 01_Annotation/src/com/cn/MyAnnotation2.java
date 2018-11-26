@@ -14,11 +14,13 @@ import java.lang.annotation.Target;
  * @Auther: zhangfx
  * @Date: 2018/11/23/ 11:05
  */
-@Target(value = {ElementType.METHOD,ElementType.TYPE})
+@Target(value = {ElementType.METHOD,ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MyAnnotation {
+public @interface MyAnnotation2 {
 
-        String value();
+        String name() ;
+
+        int lenth() default 6;
 
 
 }
