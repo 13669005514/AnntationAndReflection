@@ -1,6 +1,11 @@
 package com.test;
 
+import com.test.bean.User;
+
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * @Description:
@@ -23,14 +28,40 @@ public class Demo2 {
             System.out.println("-------------分割线-------------");
             Constructor constructor = aClass.getConstructor(null);
             System.out.println(constructor);
-            Constructor constructor1 = aClass.getConstructor( String.class,int.class);
+            Constructor constructor1 = aClass.getConstructor( String.class,Integer.class);
             System.out.println(constructor1);
+            //1.3获取所有的方法
+            System.out.println("-------------分割线-------------");
+            Method[] methods = aClass.getMethods();
+            for (Method method : methods) {
+                System.out.println(method);
+            }
+            System.out.println("-------------分割线-------------");
+            //仅获取此类中的方法
+            Method[] declaredMethods = aClass.getDeclaredMethods();
+            for (Method declaredMethod : declaredMethods) {
+                System.out.println(declaredMethod);
+            }
 
 
+            //1.4获取指定的方法
+            System.out.println("-------------分割线-------------");
+            Method setAge = aClass.getDeclaredMethod("setAge", Integer.class);
+            System.out.println(setAge);
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
+            //1.5获取所有属性
+            System.out.println("-------------分割线-------------");
+            Field[] declaredFields = aClass.getDeclaredFields();
+            for (Field declaredField : declaredFields) {
+                System.out.println(declaredField);
+            }
+            //1.6获取指定的属性
+            System.out.println("-------------分割线-------------");
+            Field name = aClass.getDeclaredField("name");
+            System.out.println(name);
+
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
