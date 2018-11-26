@@ -38,7 +38,7 @@ public class Demo3 {
             Field name = aClass.getDeclaredField("name");
             name.setAccessible(true);//设置不需要做安全检查 可以访问私有属性
             name.set(u4,"测试5");
-            System.out.println(u4.getName());
+            System.out.println(u4.getName()) ;
 
         } catch (Exception e) {
             e.printStackTrace();
