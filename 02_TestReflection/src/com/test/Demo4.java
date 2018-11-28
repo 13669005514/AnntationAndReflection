@@ -26,11 +26,16 @@ public class Demo4 {
          */
         Runtime runtime = Runtime.getRuntime();
 
-        Process exec = runtime.exec("java -cp G://HelloWord.class");
+        Process exec = runtime.exec("java -cp G://    HelloWord");
 
         InputStream inputStream = exec.getInputStream();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        String info = null;
 
+        while ((info=bufferedReader.readLine() )!= null) {
+            System.out.println(2);
+            System.out.println(info);
+        }
 
     }
 
